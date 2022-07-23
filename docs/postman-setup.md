@@ -20,3 +20,4 @@ See `docs/localAuth.md` for examples
 2. Copy the **content** of the refresh token
 3. Under the devU collection, set a variable called `authorization` to the content of the previous step
 4. Run all the requests you want!
+
