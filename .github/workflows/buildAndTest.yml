@@ -23,6 +23,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: docker run \
+             --name typeorm-postgres \
+             -p 5432:5432 \
+             -e POSTGRES_PASSWORD=password \
+             -e POSTGRES_DB=typescript_api \
+             -e POSTGRES_USER=typescript_user \
+             -d postgres
     - run: npm ci
+    - run: npm run generate-config
+    - run: npm run typeorm -- migration:run
     - run: npm run build
     - run: npm test
