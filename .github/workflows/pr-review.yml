@@ -29,7 +29,8 @@ jobs:
         npm ci
         npm run generate-config
         npm run typeorm -- migration:run
-    - run: npm run build
+    - name: Build project
+      run: npm run build
 
 
   test:
@@ -40,7 +41,22 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: mattallty/jest-github-action@v1
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Prepare environment 
+      run: |
+        docker run --name typeorm-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=typescript_api -e POSTGRES_USER=typescript_user -d postgres
+        npm ci
+        npm run generate-config
+        npm run typeorm -- migration:run
+    - name: Build project
+      run: npm run build
+    - name: Run tests
+      uses: mattallty/jest-github-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -51,4 +67,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: npm run format
+    - name: Prepare environment
+      run: npm ci
+    - name: Run formatter
+      run: npm run format
