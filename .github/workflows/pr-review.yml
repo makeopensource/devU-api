@@ -1,17 +1,17 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build
+name: PR Review
 
 on: pull_request
 
 jobs:
   build:
+    name: Prepare environment and build
 
     runs-on: ubuntu-latest
 
     strategy:
-      fail-fast: false
       matrix:
         node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
@@ -23,15 +23,32 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: docker run
-             --name typeorm-postgres
-             -p 5432:5432
-             -e POSTGRES_PASSWORD=password
-             -e POSTGRES_DB=typescript_api
-             -e POSTGRES_USER=typescript_user
-             -d postgres
-    - run: npm ci
-    - run: npm run generate-config
-    - run: npm run typeorm -- migration:run
+    - name: Prepare environment 
+      run: |
+        docker run --name typeorm-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=typescript_api -e POSTGRES_USER=typescript_user -d postgres
+        npm ci
+        npm run generate-config
+        npm run typeorm -- migration:run
     - run: npm run build
-    - run: npm test
+
+
+  test:
+    name: Run tests
+
+    needs: build
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: mattallty/jest-github-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  format:
+    name: Run formatter
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: npm run format
