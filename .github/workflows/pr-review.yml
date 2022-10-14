@@ -7,7 +7,7 @@ on: pull_request
 
 jobs:
   build:
-    name: Prepare environment and build
+    name: Build
 
     runs-on: ubuntu-latest
 
@@ -42,10 +42,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Prepare environment 
       run: |
@@ -67,6 +66,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        cache: 'npm'
     - name: Prepare environment
       run: npm ci
     - name: Run formatter
