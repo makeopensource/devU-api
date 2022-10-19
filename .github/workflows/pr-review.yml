@@ -75,7 +75,7 @@ jobs:
       run: npm ci
     - name: Run formatter
       run: npm run format
-    - name: Commit results (but not yet for testing)
-      run: |
-        git add .
-        git commit
+    - name: Commit results
+      uses: maxgfr/github-commit-push-file@main
+      with:
+        commit_name: 'style: run formatter'
