@@ -57,8 +57,6 @@ Request headers (notice the space between `Bearer` and `<token>`!):
 
 With this flag on, it enabled the `/login/developer` route (see `./router/login.router.ts` for more details).
 
-
-
 ## Testing SAML Authentication Locally
 
 To test SAML authentication, you will need to configure an Identity Provider (IDP) for the API to authenticate against. As we don't expect anyone to just have a configured IDP laying around ready to go, this will walk through using [SamlTest.id](https://samltest.id/).
