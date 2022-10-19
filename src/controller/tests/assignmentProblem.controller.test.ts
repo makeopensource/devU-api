@@ -65,7 +65,7 @@ describe('AssignmentProblemController', () => {
           fail('Expected test to throw')
         } catch {
           expect(next).toBeCalledWith(expectedError)
-          fail('Example of failing test, with poor formatting that should be fixed')
+fail('Example of failing test, with poor formatting that should be fixed')
         }
       })
     })
