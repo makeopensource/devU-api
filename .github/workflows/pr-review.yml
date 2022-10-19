@@ -78,4 +78,4 @@ jobs:
     - name: Commit results (but not yet for testing)
       run: |
         git add .
-        git status
+        git commit
