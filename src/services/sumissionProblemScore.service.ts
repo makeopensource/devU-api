@@ -1,33 +1,31 @@
 import { getRepository, IsNull } from 'typeorm'
 
-import { SubmissionProblemScore as SubmissionProblemScoreModel } from 'devu-shared-modules'
+import SubmissionProblemScoreModel from '../model/submissionProblemScore.model'
 
-import SubmissionProblemScore from '../model/submissionProblemScore.model'
+import { SubmissionProblemScore } from 'devu-shared-modules'
 
-const connect = () => getRepository(SubmissionProblemScore)
+const connect = () => getRepository(SubmissionProblemScoreModel)
 
-export async function create(submissionProblemScore: SubmissionProblemScoreModel) {
+export async function create(submissionProblemScore: SubmissionProblemScore) {
   return await connect().save(submissionProblemScore)
 }
 
-export async function update(submissionProblemScore: SubmissionProblemScoreModel) {
+export async function update(submissionProblemScore: SubmissionProblemScore) {
   const { submissionId, assignmentProblemId, score, feedback, released } = submissionProblemScore
-
   if (!submissionId) throw new Error('Missing Id')
-
   return await connect().update(submissionId, { assignmentProblemId, score, feedback, released })
 }
 
-export async function _delete(submissionId: number) {
-  return await connect().softDelete({ submissionId, deletedAt: IsNull() })
+export async function _delete(id: number) {
+  return await connect().softDelete({ id, deletedAt: IsNull() })
 }
 
-export async function retrieve(submissionId: number) {
-  return await connect().findOne({ submissionId, deletedAt: IsNull() })
+export async function retrieve(id: number) {
+  return await connect().findOne({ id, deletedAt: IsNull() })
 }
 
-export async function list(submissionId: number) {
-  return await connect().find({ deletedAt: IsNull(), submissionId })
+export async function list() {
+  return await connect().find({ submissionId: submissionId, deletedAt: IsNull() })
 }
 
 export default {
