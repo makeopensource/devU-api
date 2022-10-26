@@ -8,7 +8,7 @@ import { serialize } from '../utils/serializer/categoryScore.serializer'
 
 export async function get(req: Request, res: Response, next: NextFunction) {
   try {
-    const categoryScores = await CategoryScore.list()
+    const categoryScores = await CategoryScoreService.list()
     const response = categoryScores.map(serialize)
 
     res.status(200).json(response)
@@ -20,7 +20,7 @@ export async function get(req: Request, res: Response, next: NextFunction) {
 export async function detail(req: Request, res: Response, next: NextFunction) {
   try {
     const id = parseInt(req.params.id)
-    const categoryScore = await CategoryScore.retrieve(id)
+    const categoryScore = await CategoryScoreService.retrieve(id)
 
     if (!categoryScore) return res.status(404).json(NotFound)
 
@@ -34,7 +34,7 @@ export async function detail(req: Request, res: Response, next: NextFunction) {
 
 export async function post(req: Request, res: Response, next: NextFunction) {
   try {
-    const categoryScore = await CategoryScore.create(req.body)
+    const categoryScore = await CategoryScoreService.create(req.body)
     const response = serialize(categoryScore)
 
     res.status(201).json(response)
@@ -46,7 +46,7 @@ export async function post(req: Request, res: Response, next: NextFunction) {
 export async function put(req: Request, res: Response, next: NextFunction) {
   try {
     req.body.id = parseInt(req.params.id)
-    const results = await CategoryScore.update(req.body)
+    const results = await CategoryScoreService.update(req.body)
 
     if (!results.affected) return res.status(404).json(NotFound)
 
@@ -59,7 +59,7 @@ export async function put(req: Request, res: Response, next: NextFunction) {
 export async function _delete(req: Request, res: Response, next: NextFunction) {
   try {
     const id = parseInt(req.params.id)
-    const results = await CategoryScore._delete(id)
+    const results = await CategoryScoreService._delete(id)
 
     if (!results.affected) return res.status(404).json(NotFound)
 
