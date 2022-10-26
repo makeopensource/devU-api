@@ -2,7 +2,7 @@
 
 ## Enabling Developer Auth
 
-By default (aka in the `default.yml.template` file) developer auth is enabled. If you don't care how that works you can just use the config as is and you should be good to go. (It'll look something like this)
+By default (aka in the `config/default.yml.template` file) developer auth is enabled. If you don't care how that works you can just use the config as is and you should be good to go. (It'll look something like this)
 
 ```yaml
 providers:
