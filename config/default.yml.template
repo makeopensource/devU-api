@@ -1,11 +1,11 @@
 api:
   clientUrl: http://localhost:9000
   scheme: http
-  host: localhost
+  host: web
   port: 3001
 
 database:
-  host: 'localhost'
+  host: 'db'
   username: 'typescript_user'
   password: 'password'
   name: 'typescript_api'
