@@ -1,0 +1,52 @@
+name: Format
+
+on:
+  pull_request_target:
+    paths-ignore:
+      package.json
+
+jobs:
+  paths-filter:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.filter.outputs.workflows }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: workflow tests
+      if: steps.filter.outputs.workflows != 'true'
+      run: echo "Workflow file"
+
+  format:
+    name: Run formatter
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Check if package.json was changed
+      uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          workflows:
+            - 'package.json'
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        cache: 'npm'
+      if: ${{ steps.filter.outputs.workflows == 'true' }}
+    - name: Prepare environment
+      run: npm ci
+      if: ${{ steps.filter.outputs.workflows == 'true' }}
+    - name: Run formatter
+      run: npm run format
+      if: ${{ steps.filter.outputs.workflows == 'true' }}
+    - name: Commit results
+      uses: EndBug/add-and-commit@v9
+      with:
+        message: 'style: run formatter'
+        default_author: github_actions
+      if: ${{ steps.filter.outputs.workflows == 'true' }}
