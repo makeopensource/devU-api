@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: workflow tests
-      if: steps.filter.outputs.workflows != 'true'
+      if: steps.filter.outputs.workflows != 'false'
       run: echo "Workflow file"
 
   format:
@@ -37,16 +37,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         cache: 'npm'
-      if: ${{ steps.filter.outputs.workflows == 'true' }}
+      if: ${{ steps.filter.outputs.workflows == 'false' }}
     - name: Prepare environment
       run: npm ci
-      if: ${{ steps.filter.outputs.workflows == 'true' }}
+      if: ${{ steps.filter.outputs.workflows == 'false' }}
     - name: Run formatter
       run: npm run format
-      if: ${{ steps.filter.outputs.workflows == 'true' }}
+      if: ${{ steps.filter.outputs.workflows == 'false' }}
     - name: Commit results
       uses: EndBug/add-and-commit@v9
       with:
         message: 'style: run formatter'
         default_author: github_actions
-      if: ${{ steps.filter.outputs.workflows == 'true' }}
+      if: ${{ steps.filter.outputs.workflows == 'false' }}
