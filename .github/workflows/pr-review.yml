@@ -58,9 +58,3 @@ jobs:
       uses: mattallty/jest-github-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-  format:
-    name: Run formatter
-
-    runs-on: ubuntu-latest
