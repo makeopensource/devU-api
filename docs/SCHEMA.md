@@ -6,9 +6,9 @@
 - [x] [Assignment](#assignment)
 - [x] [Submission](#submission)
 - [x] [AssignmentProblem](#assignmentproblem)
-- [ ] [SubmissionProblemScore](#submissionproblemscore)
-- [ ] [SubmissionScore](#submissionscore)
-- [ ] [AssignmentScore](#assignmentscore)
+- [x] [SubmissionProblemScore](#submissionproblemscore)
+- [x] [SubmissionScore](#submissionscore)
+- [x] [AssignmentScore](#assignmentscore)
 - [ ] [CategoryScore](#categoryscore)
 - [ ] [Category](#category)
 - [ ] [CourseScore](#coursescore)
@@ -110,7 +110,7 @@ _Links a user to a course_
 ### Category
 
 - courseId: foreign_key
-- _missing attributes_
+- name: string
 
 ### CourseScore
 
