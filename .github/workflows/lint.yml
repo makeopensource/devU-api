@@ -33,6 +33,9 @@ jobs:
         filters: |
           workflows:
             - 'package.json'
+    # Because this runs `npm format` in a privileged environment, we should
+    # make sure that script hasn't been changed to something malicious.
+    # If the package.json file was changed, this script will not continue any further
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
