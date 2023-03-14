@@ -18,7 +18,7 @@ let req: any
 let res: any
 let next: any
 
-let mockedCategory: CategoryModel[]
+let mockedCategories: CategoryModel[]
 let mockedCategory: CategoryModel
 let expectedResults: Category[]
 let expectedResult: Category
@@ -32,10 +32,10 @@ describe('CategoryController', () => {
     res = Testing.fakeResponse()
     next = Testing.fakeNext()
 
-    mockedCategory = Testing.generateTypeOrmArray(CategoryModel, 3)
+    mockedCategories = Testing.generateTypeOrmArray(CategoryModel, 3)
     mockedCategory = Testing.generateTypeOrm(CategoryModel)
 
-    expectedResults = mockedCategory.map(serialize)
+    expectedResults = mockedCategories.map(serialize)
     expectedResult = serialize(mockedCategory)
     expectedError = new Error('Expected Error')
 
@@ -45,7 +45,7 @@ describe('CategoryController', () => {
   describe('GET - /categories', () => {
     describe('200 - Ok', () => {
       beforeEach(async () => {
-        CategoryService.list = jest.fn().mockImplementation(() => Promise.resolve(mockedCategory))
+        CategoryService.list = jest.fn().mockImplementation(() => Promise.resolve(mockedCategories))
         await controller.get(req, res, next) // what we're testing
       })
 
