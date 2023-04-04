@@ -93,19 +93,22 @@ _Links a user to a course_
 - feedback: ?
 - released: ?
 
+**------ Everything above this line exists in the code. Everything below needs to be built ------**
+
 ### AssignmentScore
 
 - assignmentId: foreign_key
 - userId: foreign_key
 - score: ?
 
-**------ Everything above this line exists in the code. Everything below needs to be built ------**
 
 ### CategoryScore
 
-- categoryId: foreign_key
+- courseId: foreign_key
 - userId: foreign_key
-- _missing attributes_
+- category: string
+- score: ?
+- letterGrade: string[enum]
 
 ### Category
 
