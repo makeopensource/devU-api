@@ -78,8 +78,6 @@ _Links a user to a course_
 - problemName: ?
 - maxScore: ?
 
-**------ Everything above this line exists in the code. Everything below needs to be built ------**
-
 ### SubmissionProblemScore
 
 - submissionId: foreign_key
@@ -100,6 +98,8 @@ _Links a user to a course_
 - assignmentId: foreign_key
 - userId: foreign_key
 - score: ?
+
+**------ Everything above this line exists in the code. Everything below needs to be built ------**
 
 ### CategoryScore
 
