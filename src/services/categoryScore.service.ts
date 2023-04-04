@@ -26,9 +26,9 @@ export async function retrieve(id: number) {
   return await connect().findOne({ id, deletedAt: IsNull() })
 }
 
-// Retrieve all the categoryScores linked to a particular category by categoryId
-export async function list(categoryId: number) {
-  return await connect().find({ categoryId, deletedAt: IsNull() })
+// Retrieve all the categoryScores linked to a particular category
+export async function list(category: string) {
+  return await connect().find({ category, deletedAt: IsNull() })
 }
 
 export default {
