@@ -8,7 +8,7 @@
 - [x] [AssignmentProblem](#assignmentproblem)
 - [x] [SubmissionProblemScore](#submissionproblemscore)
 - [x] [SubmissionScore](#submissionscore)
-- [x] [AssignmentScore](#assignmentscore)
+- [ ] [AssignmentScore](#assignmentscore)
 - [ ] [CategoryScore](#categoryscore)
 - [ ] [Category](#category)
 - [ ] [CourseScore](#coursescore)
@@ -108,7 +108,6 @@ _Links a user to a course_
 - userId: foreign_key
 - category: string
 - score: ?
-- letterGrade: string[enum]
 
 ### Category
 
@@ -119,4 +118,5 @@ _Links a user to a course_
 
 - courseId: foreign_key
 - userId: foreign_key
-- _missing attributes_
+- score: ?
+- letterGrade: string
