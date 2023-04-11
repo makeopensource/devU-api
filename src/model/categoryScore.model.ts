@@ -9,8 +9,6 @@ import {
   Entity,
 } from 'typeorm'
 
-import { LetterGrade, letterGrades } from 'devu-shared-modules'
-
 import CategoryModel from './category.model'
 import CourseModel from './course.model'
 import UserModel from './user.model'
@@ -46,7 +44,4 @@ export default class CategoryScore {
 
   @Column({ name: 'score', type: 'float' })
   score: number
-
-  @Column({ name: 'letter_grade', type: 'enum', enum: letterGrades })
-  letterGrade: LetterGrade
 }
