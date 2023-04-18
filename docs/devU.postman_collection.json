@@ -1,801 +1,701 @@
 {
-	"info": {
-		"_postman_id": "e226b901-52c8-4987-b8dc-c2877db66612",
-		"name": "devU",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16727143"
-	},
-	"item": [
-		{
-			"name": "auth",
-			"item": [
-				{
-					"name": "retrieve auth token",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"emil@gmail.com\",\n    \"externalId\": \"776\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/login/developer",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"login",
-								"developer"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "users",
-			"item": [
-				{
-					"name": "get users",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/users/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"users",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get (single) user",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/users/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"users",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create (single) user",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"emilkovacev@gmail.com\",\n    \"externalId\": \"abc\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/users/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"users",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get (single) user",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/users/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "courses",
-			"item": [
-				{
-					"name": "get courses",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/courses/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"courses",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get (single) course",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/courses/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"courses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create (single) course",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Systems Programming\",\n    \"semester\": \"f2021\",\n    \"number\": \"cse220\",\n    \"startDate\": \"2021-09-03\",\n    \"endDate\": \"2021-12-10\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/courses/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"courses",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete (single) course",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/courses/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"courses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "user-courses",
-			"item": [
-				{
-					"name": "get (single) user-course",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/user-courses/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"user-courses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create (single) user-course",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"userId\": 1,\n    \"courseId\": 1,\n    \"level\": \"student\",\n    \"dropped\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/user-courses/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"user-courses",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete (single) user-course",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/user-courses/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"user-courses",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "assignments",
-			"item": [
-				{
-					"name": "get assignments",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/assignments",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"assignments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get (single) assignment",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/assignments/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"assignments",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create (single) assignment",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"courseId\": 1,\n    \"name\": \"PA0\",\n    \"gradingType\": \"code\",\n    \"categoryName\": \"PA\",\n    \"description\": \"run-line encoder\",\n    \"startDate\": \"2021-09-10\",\n    \"dueDate\": \"2021-10-02\",\n    \"endDate\": \"2021-10-10\",\n    \"maxFileSize\": 1000,\n    \"disableHandins\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/assignments",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"assignments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete (single) assignment",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/assignments/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"assignments",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "submissions",
-			"item": [
-				{
-					"name": "get submissions",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/submissions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"submissions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get (single) submission",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/submissions/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"submissions",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create (single) submission",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"userId\": 1,\n    \"assignmentId\": 1,\n    \"courseId\": 1,\n    \"type\": \"text\",\n    \"content\": \"uhhhhh\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/submissions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"submissions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete (single) submission",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{authorization}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/submissions/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"submissions",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNrMDcxMTIwMjEifQ.eyJ1c2VySWQiOjEsImlzUmVmcmVzaFRva2VuIjp0cnVlLCJpYXQiOjE2NjY4MTk1MTUsImV4cCI6MTY2NzY4MzUxNSwiYXVkIjpbImRldlUtYXBpIiwiZGV2VS1jbGllbnQiXSwiaXNzIjoiZGV2VS1hdXRoIiwic3ViIjoiMSJ9.v-fWfekwbQwS5baoV384bBVVE4c3PoJLnfqr_oCrsgANR5MneI6Fs05Ek3dowRGWTL-VPBHq_pFBeF93dGkHwjoOF2Rs-1gzmsz0suTZUrmb0Nw7V3cHeppKfnPDjrmReDvESAEEQ3aTmX1TzvNbe_hEwBqrBtzdrbn456MbIOjJJuXlrL2J_m3wEe1_OW9ijg9wYf603g_6mWHbrc7B-71ZoVE4nNw3wEAAL_aHuFcqgOsyIyN6jmF4ItdVbHt9gUtpG7d694CLKzmyByVhhk356-sXJ2HVJaivl-jkkWxeRVEB8eKOHcYi1BWzMG_S-ItdMBj8lU8UtZ21plcxc7rJUe6hO4bLh3O1vaU4_gCS0EZbD2p-E7-l18WNMs40XybmNH4kjtmI8if8i720DBMUiy0-eHB0ocnmri2sN8aA0sQzWEbpKJ8fcQENEeBdQimyKDQkmQ4lUc8yrqscUs8_MfqaT3kat-lhiEKu4B2CvtHs_9ucMjDuvnTUNdXu",
-				"type": "string"
-			}
-		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "authorization",
-			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNrMDcxMTIwMjEifQ.eyJ1c2VySWQiOjEsImlzUmVmcmVzaFRva2VuIjp0cnVlLCJpYXQiOjE2NjY4MTk1MTUsImV4cCI6MTY2NzY4MzUxNSwiYXVkIjpbImRldlUtYXBpIiwiZGV2VS1jbGllbnQiXSwiaXNzIjoiZGV2VS1hdXRoIiwic3ViIjoiMSJ9.v-fWfekwbQwS5baoV384bBVVE4c3PoJLnfqr_oCrsgANR5MneI6Fs05Ek3dowRGWTL-VPBHq_pFBeF93dGkHwjoOF2Rs-1gzmsz0suTZUrmb0Nw7V3cHeppKfnPDjrmReDvESAEEQ3aTmX1TzvNbe_hEwBqrBtzdrbn456MbIOjJJuXlrL2J_m3wEe1_OW9ijg9wYf603g_6mWHbrc7B-71ZoVE4nNw3wEAAL_aHuFcqgOsyIyN6jmF4ItdVbHt9gUtpG7d694CLKzmyByVhhk356-sXJ2HVJaivl-jkkWxeRVEB8eKOHcYi1BWzMG_S-ItdMBj8lU8UtZ21plcxc7rJUe6hO4bLh3O1vaU4_gCS0EZbD2p-E7-l18WNMs40XybmNH4kjtmI8if8i720DBMUiy0-eHB0ocnmri2sN8aA0sQzWEbpKJ8fcQENEeBdQimyKDQkmQ4lUc8yrqscUs8_MfqaT3kat-lhiEKu4B2CvtHs_9ucMjDuvnTUNdXu",
-			"type": "string"
-		}
-	]
+  "info": {
+    "_postman_id": "e226b901-52c8-4987-b8dc-c2877db66612",
+    "name": "devU",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "16727143"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "retrieve auth token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"emil@gmail.com\",\n    \"externalId\": \"776\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/login/developer",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["login", "developer"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "get users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get (single) user",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create (single) user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"emilkovacev@gmail.com\",\n    \"externalId\": \"abc\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get (single) user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["users", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "courses",
+      "item": [
+        {
+          "name": "get courses",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/courses/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["courses", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get (single) course",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["courses", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create (single) course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Systems Programming\",\n    \"semester\": \"f2021\",\n    \"number\": \"cse220\",\n    \"startDate\": \"2021-09-03\",\n    \"endDate\": \"2021-12-10\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/courses/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["courses", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete (single) course",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["courses", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "user-courses",
+      "item": [
+        {
+          "name": "get (single) user-course",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/user-courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["user-courses", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create (single) user-course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"courseId\": 1,\n    \"level\": \"student\",\n    \"dropped\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/user-courses/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["user-courses", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete (single) user-course",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/user-courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["user-courses", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "assignments",
+      "item": [
+        {
+          "name": "get assignments",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/assignments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["assignments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get (single) assignment",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/assignments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["assignments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create (single) assignment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"courseId\": 1,\n    \"name\": \"PA0\",\n    \"gradingType\": \"code\",\n    \"categoryName\": \"PA\",\n    \"description\": \"run-line encoder\",\n    \"startDate\": \"2021-09-10\",\n    \"dueDate\": \"2021-10-02\",\n    \"endDate\": \"2021-10-10\",\n    \"maxFileSize\": 1000,\n    \"disableHandins\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/assignments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["assignments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete (single) assignment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/assignments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["assignments", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "submissions",
+      "item": [
+        {
+          "name": "get submissions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/submissions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["submissions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get (single) submission",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/submissions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["submissions", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create (single) submission",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"assignmentId\": 1,\n    \"courseId\": 1,\n    \"type\": \"text\",\n    \"content\": \"uhhhhh\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/submissions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["submissions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete (single) submission",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authorization}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/submissions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["submissions", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNrMDcxMTIwMjEifQ.eyJ1c2VySWQiOjEsImlzUmVmcmVzaFRva2VuIjp0cnVlLCJpYXQiOjE2NjY4MTk1MTUsImV4cCI6MTY2NzY4MzUxNSwiYXVkIjpbImRldlUtYXBpIiwiZGV2VS1jbGllbnQiXSwiaXNzIjoiZGV2VS1hdXRoIiwic3ViIjoiMSJ9.v-fWfekwbQwS5baoV384bBVVE4c3PoJLnfqr_oCrsgANR5MneI6Fs05Ek3dowRGWTL-VPBHq_pFBeF93dGkHwjoOF2Rs-1gzmsz0suTZUrmb0Nw7V3cHeppKfnPDjrmReDvESAEEQ3aTmX1TzvNbe_hEwBqrBtzdrbn456MbIOjJJuXlrL2J_m3wEe1_OW9ijg9wYf603g_6mWHbrc7B-71ZoVE4nNw3wEAAL_aHuFcqgOsyIyN6jmF4ItdVbHt9gUtpG7d694CLKzmyByVhhk356-sXJ2HVJaivl-jkkWxeRVEB8eKOHcYi1BWzMG_S-ItdMBj8lU8UtZ21plcxc7rJUe6hO4bLh3O1vaU4_gCS0EZbD2p-E7-l18WNMs40XybmNH4kjtmI8if8i720DBMUiy0-eHB0ocnmri2sN8aA0sQzWEbpKJ8fcQENEeBdQimyKDQkmQ4lUc8yrqscUs8_MfqaT3kat-lhiEKu4B2CvtHs_9ucMjDuvnTUNdXu",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "authorization",
+      "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNrMDcxMTIwMjEifQ.eyJ1c2VySWQiOjEsImlzUmVmcmVzaFRva2VuIjp0cnVlLCJpYXQiOjE2NjY4MTk1MTUsImV4cCI6MTY2NzY4MzUxNSwiYXVkIjpbImRldlUtYXBpIiwiZGV2VS1jbGllbnQiXSwiaXNzIjoiZGV2VS1hdXRoIiwic3ViIjoiMSJ9.v-fWfekwbQwS5baoV384bBVVE4c3PoJLnfqr_oCrsgANR5MneI6Fs05Ek3dowRGWTL-VPBHq_pFBeF93dGkHwjoOF2Rs-1gzmsz0suTZUrmb0Nw7V3cHeppKfnPDjrmReDvESAEEQ3aTmX1TzvNbe_hEwBqrBtzdrbn456MbIOjJJuXlrL2J_m3wEe1_OW9ijg9wYf603g_6mWHbrc7B-71ZoVE4nNw3wEAAL_aHuFcqgOsyIyN6jmF4ItdVbHt9gUtpG7d694CLKzmyByVhhk356-sXJ2HVJaivl-jkkWxeRVEB8eKOHcYi1BWzMG_S-ItdMBj8lU8UtZ21plcxc7rJUe6hO4bLh3O1vaU4_gCS0EZbD2p-E7-l18WNMs40XybmNH4kjtmI8if8i720DBMUiy0-eHB0ocnmri2sN8aA0sQzWEbpKJ8fcQENEeBdQimyKDQkmQ4lUc8yrqscUs8_MfqaT3kat-lhiEKu4B2CvtHs_9ucMjDuvnTUNdXu",
+      "type": "string"
+    }
+  ]
 }
