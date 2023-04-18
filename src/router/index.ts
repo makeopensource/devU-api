@@ -3,16 +3,17 @@ import swaggerUi from 'swagger-ui-express'
 
 import swagger from '../utils/swagger.utils'
 
-import userCourse from './userCourses.router'
-import assignments from './assignments.router'
-import assignmentProblems from './assignmentProblems.router'
-import courses from './courses.router'
+import codeAssignment from './codeAssignment.router'
+import userCourse from './userCourse.router'
+import assignments from './assignment.router'
+import courses from './course.router'
 import login from './login.router'
 import logout from './logout.router'
 import status from './status.router'
 import submissions from './submissions.router'
 import users from './users.router'
 import categoryScore from './categoryScore.router'
+import submissionScore from './submissionScore.router'
 
 import { isAuthorized } from '../middleware/auth.middleware'
 
@@ -21,13 +22,14 @@ import { NotFound } from '../utils/apiResponse.utils'
 const Router = express.Router()
 
 Router.use('/assignments', isAuthorized, assignments)
-Router.use('/assignment-problems', isAuthorized, assignmentProblems)
 Router.use('/courses', isAuthorized, courses)
 Router.use('/user-courses', isAuthorized, userCourse)
+Router.use('/code-assignments', isAuthorized, codeAssignment)
 Router.use('/docs', swaggerUi.serve, swaggerUi.setup(swagger))
 Router.use('/submissions', isAuthorized, submissions)
 Router.use('/users', isAuthorized, users)
 Router.use('/categoryScore', isAuthorized, categoryScore)
+Router.use('/submission-scores', isAuthorized, submissionScore)
 
 Router.use('/login', login)
 Router.use('/logout', logout)
