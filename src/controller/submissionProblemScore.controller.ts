@@ -1,4 +1,4 @@
-import {SubmissionProblemScore} from 'devu-shared-modules'
+import { SubmissionProblemScore } from 'devu-shared-modules'
 import { Request, Response, NextFunction } from 'express'
 
 import SubmissionProblemScoreService from '../services/submissionProblemScore.service'
