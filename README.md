@@ -49,6 +49,7 @@ Run the setup script to create local development auth keys. These are used in lo
 npm run generate-config
 ```
 
+
 Run the initial migrations to setup our DB schema
 
 ```

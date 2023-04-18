@@ -26,6 +26,7 @@ let expectedError: Error
 let expectedDbResult: UpdateResult
 
 describe('SubmissionProblemScoreController', () => {
+
   beforeEach(() => {
     req = Testing.fakeRequest()
     res = Testing.fakeResponse()
